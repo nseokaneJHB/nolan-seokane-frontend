@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
-	// { path: '', component: MainComponent },
+	{ path: '', component: LandingComponent },
+
 	{ path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

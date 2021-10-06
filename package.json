@@ -23,7 +23,7 @@
     "@angular/router": "~11.2.12",
     "@types/jquery": "^3.5.5",
     "animate.css": "^4.1.1",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.1.2",
     "jquery": "^3.6.0",
     "ngx-spinner": "^11.0.1",
     "popper.js": "^1.16.1",

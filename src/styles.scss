@@ -1,7 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 // Font
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-@import url(//db.onlinewebfonts.com/c/febf37ead8b4b5230a74ef82850ffca4?family=LocalBreweryFour-Regular);
+// @import url('./assets/fonts/local-brewery-four.otf');
+// @import url('./assets/fonts/flood-std.otf');
+
+@font-face {
+	font-family: brewery;
+	src: url('./assets/fonts/local-brewery-four.otf');
+}
+
+@font-face {
+	font-family: flood;
+	src: url('./assets/fonts/flood-std.otf');
+}
+
+@import 'default.scss';
 
 // Screen Sizes
 $tablet: 750px;
@@ -13,25 +26,77 @@ $tablet: 750px;
 	}
 }
 
-// Declaration of colors
-$primary-gradient: linear-gradient(to right, rgba(216, 226, 215, 1) 0%, 0%, rgba(69, 109, 108, 1) 0%, 50%, rgba(216, 226, 215, 1) 100%);
-$primary-color: rgba(70, 115, 110, 1);
-
-$secondary-color: rgba(54, 89, 86, 1);
-$tertiary-color: rgba(105, 140, 137, 1);
-$quaternary-color: rgba(143, 166, 159, 1);
-$quinary-color: rgba(209, 217, 208, 1);
-
-
 * {
+	transition: all 1s ease-in-out;
 	scroll-behavior: smooth;
 	box-sizing: border-box;
-	transition: 1s;
 	padding: 0;
 	margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: flood;
+}
+
+p, small, span, a{
+	font-family: brewery;
+}
+
 body{
 	background-color: $quinary-color;
-	color: $primary-color;	
+	color: $primary-color;
+
+	// ================================================== Navigation bar ==================================================
+	.navbar{
+		background-color: $primary-color !important;
+
+		.navbar-brand {
+			color: $quinary-color !important;
+		}
+		
+		.navbar-nav {
+			.nav-link {
+				color: $quinary-color !important;
+			}
+		
+			.show > .nav-link,
+			.active > .nav-link,
+			.nav-link.show,
+			.nav-link.active {
+				color: $quinary-color !important;
+			}
+		}
+		
+		svg {
+			color: $quinary-color !important;
+			border-color: $quinary-color !important;
+		}
+
+		.navbar-toggler, .navbar-toggler:focus{
+			box-shadow: none;
+			border: none;
+		}
+		
+		.navbar-text {
+			color: $quinary-color !important;
+
+			a {
+				color: $quinary-color !important;
+			}
+		}
+	}
+	// ================================================== End Of Navigation bar ==================================================
+
+	.main__section{
+		min-height: calc(100vh - 83px);
+	}
+
+	.footer__section{
+		background-color: $primary-color;
+		justify-content: center;
+		color: $quinary-color;
+		align-items: center;
+		display: flex;
+		height: 80px;
+	}
 }

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
@@ -16,9 +17,9 @@ import { LandingComponent } from './pages/landing/landing.component';
 @NgModule({
 	declarations: [
 		AppComponent,
-  NavbarComponent,
-  FooterComponent,
-  LandingComponent,
+		NavbarComponent,
+		FooterComponent,
+		LandingComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -31,5 +32,6 @@ import { LandingComponent } from './pages/landing/landing.component';
 	],
 	providers: [],
 	bootstrap: [AppComponent]
+
 })
 export class AppModule { }
