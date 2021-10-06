@@ -1,7 +1,0 @@
-
-            Fonts used: CantataOne-Regular 
-
-            Colors used: EFEFEF,2B5292  
-
-            Icon url: https://thenounproject.com/term/developer/597288  
-        

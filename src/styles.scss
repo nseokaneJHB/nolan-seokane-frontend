@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // Font
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url(//db.onlinewebfonts.com/c/febf37ead8b4b5230a74ef82850ffca4?family=LocalBreweryFour-Regular);
 
 // Screen Sizes
 $tablet: 750px;
@@ -12,10 +13,15 @@ $tablet: 750px;
 	}
 }
 
-// Declaration
-// :root{
-	
-// }
+// Declaration of colors
+$primary-gradient: linear-gradient(to right, rgba(216, 226, 215, 1) 0%, 0%, rgba(69, 109, 108, 1) 0%, 50%, rgba(216, 226, 215, 1) 100%);
+$primary-color: rgba(70, 115, 110, 1);
+
+$secondary-color: rgba(54, 89, 86, 1);
+$tertiary-color: rgba(105, 140, 137, 1);
+$quaternary-color: rgba(143, 166, 159, 1);
+$quinary-color: rgba(209, 217, 208, 1);
+
 
 * {
 	scroll-behavior: smooth;
@@ -26,138 +32,6 @@ $tablet: 750px;
 }
 
 body{
-	background-color: #e5e5e5;
-	height: 100vh;
-
-	.navigation-bar{
-		background-color: #354955;
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		height: 5%;
-
-		.nav-link{
-			color: #eee;
-		}
-	}
-
-	.projects, .contact, .projects, .skills{
-		padding-bottom: 1em;
-		padding-top: 1em;
-	}
-
-	.hero{ 
-		background-color: #1F2428;
-		min-height: 50%;
-		color: #eee;
-
-		.hero-content{
-			padding: 3em 0;
-			margin: 0 auto;
-			height: 100%;
-			width: 100%;
-
-			.hero-content-intro{
-				justify-content: center;
-				margin-bottom: 20px;
-				align-items: center;
-				display: flex;
-				gap: 2em;
-
-				#profil_pic{
-					object-fit: cover;
-					max-width: 200px;
-					height: 200px;
-				}
-
-				.intro-name{
-					font-size: min(max(60px, 8vw), 100px);
-					letter-spacing: .1em;
-					font-weight: 900;
-				}
-			}
-
-			.hero-content-subheadline{
-				text-align: center;
-				h3{
-					font-size: min(max(30px, 5vw), 65px);
-				}
-				p{
-					font-size: min(max(14px, 1.7vw), 20px);
-				}
-				.socials{
-					justify-content: center;
-					align-items: center;
-					display: flex;
-					a{
-						margin-right: 10px;
-						border-radius: 50%;
-						border: 1px solid;
-						padding: .7em;
-						color: #eee;
-
-						svg{
-							height: 20px;
-							width: 20px;
-						}
-					}
-				}	
-			}
-		}
-	}
-
-
-	.projects-wrapper{
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		grid-template-rows: auto;
-		place-items: center;
-		display: grid;
-		gap: 1em;
-		.project-column{
-			background-color: #fff;
-			.project-body{
-				padding: .3em .7em;
-			}
-		}
-	}
-
-	.skills{
-		background-color: #fff;
-		.skills-wrapper{
-			max-width: 800px;
-			margin: 0 auto;
-			.skill{
-				margin: 1.8em 0;
-			}
-
-			.other-skills{
-				grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-				grid-template-rows: auto;
-				place-items: center;
-				padding: .5em 0;
-				display: grid;
-				row-gap: 1em;
-				.skill-tag{
-					background-color: #C4E7F2;
-					border-radius: 20px;
-					padding: .5em 1em;
-				}
-			}
-		}
-	}
-
-	.contact-wrapper{
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	@include tablet{
-		.hero-content-intro{
-			flex-direction: column;
-		}
-
-		.intro-name{
-			text-align: center;
-		}
-	}
+	background-color: $quinary-color;
+	color: $primary-color;	
 }

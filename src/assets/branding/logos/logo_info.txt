@@ -1,7 +1,7 @@
 
-            Fonts used: PlayfairDisplay-Regular 
+            Fonts used: LocalBreweryFour-Regular,FloodStd 
 
-            Colors used: EFEFEF,2B5292  
+            Colors used: D9E2D5,3E6765  
 
-            Icon url: https://thenounproject.com/term/developer/597288  
+            Icon url: https://thenounproject.com/term/skateboard/362148  
         
