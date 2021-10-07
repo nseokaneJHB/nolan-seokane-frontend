@@ -13,6 +13,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
 	declarations: [
@@ -20,15 +22,17 @@ import { LandingComponent } from './pages/landing/landing.component';
 		NavbarComponent,
 		FooterComponent,
 		LandingComponent,
+		ContactComponent,
+		ProjectsComponent,
 	],
 	imports: [
+		FormsModule,
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
-		FormsModule,
-		ReactiveFormsModule,
 		NgxSpinnerModule,
-		BrowserAnimationsModule
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
