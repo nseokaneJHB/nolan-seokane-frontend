@@ -155,34 +155,33 @@ body{
 			width: 100%;
 		}
 
+		.social__buttons__group, .project__links{
+			justify-content: center;
+			display: flex;
+			gap: 1em;
+
+			.social__link, .project__link{
+				border: 1px solid $primary-color;
+				justify-content: center;
+				color: $primary-color;
+				align-items: center;
+				border-radius: 50%;
+				cursor: pointer;
+				display: flex;
+				height: 30px;
+				width: 30px;
+
+				&:hover{
+					background-color: $primary-color;
+					color: $quinary-color;
+				}
+			}
+		}
+
 		.landing__page{
 			justify-content: center;
 			flex-direction: column;
 			display: flex;
-
-			.social__buttons__group{
-				justify-content: center;
-				display: flex;
-				padding: .5em;
-				gap: .5em;
-	
-				.social__link{
-					border: 1px solid $primary-color;
-					justify-content: center;
-					color: $primary-color;
-					align-items: center;
-					border-radius: 50%;
-					cursor: pointer;
-					display: flex;
-					height: 40px;
-					width: 40px;
-	
-					&:hover{
-						background-color: $primary-color;
-						color: $quinary-color;
-					}
-				}
-			}
 		}
 
 		.projects__page{
@@ -202,6 +201,7 @@ body{
 			
 			.projects{
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				place-items: center;
 				column-gap: .7em;
 				row-gap: .7em;
 				display: grid;
@@ -221,30 +221,46 @@ body{
 						position: absolute;
 						overflow: hidden;
 						width: 100%;
-						// height: 18%;
-						height: 100%;
+						height: 18%;
+						// height: 100%;
 						bottom: 0;
 						right: 0;
 						left: 0;
 
 						.text {
-							transform: translate(-50%, -25%);
+							transform: translate(-50%, -5%);
 							color: $quinary-color;
 							text-align: center;
 							position: absolute;
+							flex-direction: column;
+							display: flex;
 							width: 100%;
 							left: 50%;
+							gap: .8em;
 							top: 50%;
 
 							.h5{
-								padding-top: .5em;
+								line-height: 1em;
+							}
+
+							.short__description{
+								font-weight: lighter;
+								line-height: 1.5em;
+								font-size: small;
+								overflow: hidden;
+								max-width: 100%;
+								padding: .5em;
 							}
 						}
 
-						.project__links{
-							border: 1px solid;
-							display: flex;
+						.project__links a{
+							border: 1px solid $quinary-color;
+							color: $quinary-color;
 
+							&:hover{
+								background-color: $quinary-color;
+								color: $primary-color;
+							}
 						}
 					}
 
