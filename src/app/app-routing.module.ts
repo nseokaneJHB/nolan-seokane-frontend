@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 // ===================================================== Pages =====================================================
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectComponent } from './pages/project/project.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/', pathMatch: 'full' },
 
+	{ path: 'projects/:id', component: ProjectComponent },
 	{ path: 'projects', component: ProjectsComponent },
 	{ path: 'contact', component: ContactComponent },
 	{ path: '', component: LandingComponent },

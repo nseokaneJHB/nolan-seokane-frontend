@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectComponent } from './pages/project/project.component';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 		LandingComponent,
 		ContactComponent,
 		ProjectsComponent,
+  ProjectComponent,
 	],
 	imports: [
 		FormsModule,
