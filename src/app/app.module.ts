@@ -8,14 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxSpinnerModule } from "ngx-spinner";
 
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+// ========================================== Pages ==========================================
+import { ProjectsComponent } from './pages/projects/projects.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProjectComponent } from './pages/project/project.component';
+
+// ========================================== Components ==========================================
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+// ========================================== External Libraries ==========================================
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 @NgModule({
 	declarations: [
@@ -24,8 +30,8 @@ import { ProjectComponent } from './pages/project/project.component';
 		FooterComponent,
 		LandingComponent,
 		ContactComponent,
+		ProjectComponent,
 		ProjectsComponent,
-  ProjectComponent,
 	],
 	imports: [
 		FormsModule,
