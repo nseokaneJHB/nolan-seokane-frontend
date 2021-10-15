@@ -40,6 +40,12 @@ p, small, span, a, button, input{
 	font-family: brewery;
 }
 
+button:focus, 
+input:focus, 
+textarea:focus{
+	box-shadow: none !important;
+}
+
 img{
 	color: $quinary-color !important;
 
@@ -186,7 +192,9 @@ body{
 
 		.projects__page{
 			flex-direction: column;
+			padding-top: 1em;
 			display: flex;
+			gap: 1em;
 
 			.search__project{
 				justify-content: center;
@@ -281,15 +289,13 @@ body{
 		}
 
 		.project__page{
-			border: 1px solid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			display: grid;
 			width: 100%;
 			gap: 1em;
 
 			.project__img,
 			.project__details{
-				border: 1px solid red;
 				justify-content: center;
 				flex-direction: column;
 				display: flex;
@@ -301,8 +307,8 @@ body{
 
 				img{
 					overflow: hidden;
-					height: 200px;
-					width: 200px;
+					height: 300px;
+					width: 300px;
 
 					&::before{
 						min-height: 100%;
@@ -318,15 +324,19 @@ body{
 				}
 
 				.tech__stacks{
+					padding: 0 1em;
 					gap: .5em;
 
-					.stacks{
-						background-color: $primary-color;
+					.stack{
 						justify-content: center;
 						color: $quinary-color;
 						border-radius: .3em;
 						align-items: center;
 						display: flex;
+
+						img{
+							max-width: 30px;
+						}
 					}
 				}
 
@@ -343,7 +353,6 @@ body{
 		}
 
 		.contact__page{
-			border: 1px solid;
 			justify-content: center;
 			align-items: center;
 			display: flex;
