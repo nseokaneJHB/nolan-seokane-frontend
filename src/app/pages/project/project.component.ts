@@ -23,8 +23,6 @@ export class ProjectComponent implements OnInit {
 		for (const skill in this.project.skills) {
 			this.project.skills[skill] = await this.__api.getOneSkillFromUrl(this.project.skills[skill]);
 		}
-
-		console.log(this.project);
 	}
 
 	ngOnInit(): void {
