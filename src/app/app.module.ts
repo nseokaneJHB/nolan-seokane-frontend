@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// ========================================== Local Modules ==========================================
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // ========================================== Pages ==========================================
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -19,7 +21,7 @@ import { ProjectComponent } from './pages/project/project.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-// ========================================== External Libraries ==========================================
+// ========================================== External Modules ==========================================
 import { NgxSpinnerModule } from "ngx-spinner";
 
 

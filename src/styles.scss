@@ -12,7 +12,7 @@
 	src: url('./assets/fonts/flood-std.otf');
 }
 
-	@import 'default.scss';
+@import 'default.scss';
 
 // Screen Sizes
 $tablet: 750px;
@@ -42,7 +42,9 @@ p, small, span, a, button, input{
 
 button:focus, 
 input:focus, 
-textarea:focus{
+textarea:focus,
+.btn__outline__primary:focus,
+.btn__outline__secondary:focus{
 	box-shadow: none !important;
 }
 
@@ -235,7 +237,7 @@ body{
 						left: 0;
 
 						.text {
-							transform: translate(-50%, -6%);
+							transform: translate(-50%, -10%);
 							flex-direction: column;
 							color: $quinary-color;
 							text-align: center;

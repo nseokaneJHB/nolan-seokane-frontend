@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ApiService } from 'src/app/services/api.service';
+
 @Component({
 	selector: 'app-projects',
 	templateUrl: './projects.component.html',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-	constructor() { }
+	constructor(private __api: ApiService) { }
+	projects: any = []
+	skill: any;
 
-	title: string = 'Basic Store CRUD with orders';
-	description: string = 'Hi, I am Nolan Seokane from Soweto. I skateboard for fun and it is really really fun.';
-
-	ngOnInit(): void {
+	// Execute on load
+	async load(){
+		this.projects = await this.__api.getAllProjectsFromUrl();
 	}
 
+	ngOnInit(): void {
+		this.load();
+	}
+
+	async searchProjectWithSkill(e: any){
+		if (await e.target.value === '') return this.load();
+		this.projects = await this.projects.filter((project: any) => project.title.toLowerCase().match(e.target.value.toLowerCase()));
+	}
 }
