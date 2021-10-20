@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	url: "https://nolan-seokane-api.herokuapp.com/api"
+	url: "http://localhost:8000/api"
 };
 
 /*

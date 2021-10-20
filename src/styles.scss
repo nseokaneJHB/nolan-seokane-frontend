@@ -221,9 +221,15 @@ body{
 					background-color: $primary-color;
 					box-shadow: $primary-shadow;
 					position: relative;
+					overflow: hidden;
 					max-width: 200px;
 					height: 200px;
 					width: 100%;
+
+					img{
+						height: 165px;
+						width: 100%;
+					}
 
 					.overlay {
 						background-color: $primary-color;
@@ -270,7 +276,7 @@ body{
 
 					&:hover {
 						img{
-							filter: blur(5px);
+							filter: blur(3px);
 						}
 
 						.overlay {
@@ -291,64 +297,74 @@ body{
 		}
 
 		.project__page{
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			display: grid;
-			width: 100%;
-			gap: 1em;
 
-			.project__img,
-			.project__details{
+			.btn.btn__outline__secondary{
+				max-width: 100px !important;
 				justify-content: center;
-				flex-direction: column;
-				display: flex;
-				padding: 1em;
+				margin-left: .5em;
 			}
 
-			.project__img{
-				align-items: center;
+			.project__content{
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				display: grid;
+				width: 100%;
+				gap: 1em;
 
-				img{
-					overflow: hidden;
-					height: 300px;
-					width: 300px;
-
-					&::before{
-						min-height: 100%;
-						min-width: 100%;
-					}
+				.project__img,
+				.project__details{
+					justify-content: center;
+					flex-direction: column;
+					display: flex;
+					padding: 1em;
 				}
 
-			}
+				.project__img{
+					align-items: center;
 
-			.project__details{
-				.project__date{
-					color: $tertiary-color;
-				}
+					img{
+						overflow: hidden;
+						height: 300px;
+						min-width: 300px;
 
-				.tech__stacks{
-					padding: 0 1em;
-					gap: .5em;
-
-					.stack{
-						justify-content: center;
-						color: $quinary-color;
-						border-radius: .3em;
-						align-items: center;
-						display: flex;
-
-						img{
-							max-width: 30px;
+						&::before{
+							min-height: 100%;
+							min-width: 100%;
 						}
 					}
+
 				}
 
-				.project__links{
-					justify-content: start !important;
+				.project__details{
+					.project__date{
+						color: $tertiary-color;
+					}
 
-					.project__link{
-						border-radius: .3em;
-						align-items: center;
-						width: 100px;
+					.tech__stacks{
+						padding: 0 1em;
+						gap: .5em;
+
+						.stack{
+							justify-content: center;
+							color: $quinary-color;
+							border-radius: .3em;
+							align-items: center;
+							display: flex;
+
+							img{
+								max-width: 30px;
+							}
+						}
+					}
+
+					.project__links{
+						justify-content: start !important;
+
+						.project__link{
+							border-radius: .3em;
+							align-items: center;
+							width: 100px;
+						}
 					}
 				}
 			}

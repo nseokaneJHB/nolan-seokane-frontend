@@ -15,8 +15,8 @@
 				<img class="img-fluid" src="{{project.thumbnail}}" alt="{{ project.title | titlecase }}">
 				<div class="overlay">
 					<div class="text">
-						<h5 class="h5 px-1" style="font-family: brewery;">{{ project.title.length > 30 ? ( title | slice: 0:30 ) + '...': project.title  }}</h5>
-						<div class="short__description">{{ project.description.length > 56 ? ( description | slice: 0:56 ) + '...': project.description  }}</div>
+						<h5 class="h5 px-1" style="font-family: brewery;">{{ project.title.length > 30 ? ( project.title | slice: 0:30 ) + '...': project.title  }}</h5>
+						<div class="short__description">{{ project.description.length >= 56 ? ( project.description | slice: 0:56 ) + '...': project.description  }}</div>
 						<div class="project__links">
 							<a class="project__link" routerLink="/projects/{{project.slug}}" title="Project Details">
 								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
