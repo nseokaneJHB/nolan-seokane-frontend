@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: flood;
 }
 
-p, small, span, a, button, input{
+p, small, span, a, button, label{
 	font-family: brewery;
 }
 
@@ -56,8 +56,10 @@ img{
 		background-size: 100% 100%;
 		display: inline-block;
 		align-items: center;
-		min-height: 165px;
-		min-width: 200px;
+		min-height: 250px;
+		min-width: 250px;
+		height: 100%;
+		width: 100%;
 		content: "";
 	}
 }
@@ -223,24 +225,18 @@ body{
 			.projects{
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				place-items: center;
-				column-gap: .7em;
-				row-gap: .7em;
 				display: grid;
 				height: 100%;
+				gap: 1.5em;
 
 				.project{
 					background-color: $primary-color;
 					box-shadow: $primary-shadow;
 					position: relative;
 					overflow: hidden;
-					max-width: 200px;
-					height: 200px;
+					max-width: 250px;
+					height: 250px;
 					width: 100%;
-
-					img{
-						height: 165px;
-						width: 100%;
-					}
 
 					.overlay {
 						background-color: $primary-color;
@@ -386,6 +382,7 @@ body{
 		.contact__page{
 			justify-content: center;
 			align-items: center;
+			padding: 2em 0;
 			display: flex;
 
 			.contact__form{

@@ -16,36 +16,26 @@ export class ApiService {
 
 	// Get All Data From Url
 	async getAllSkillsFromUrl(){
-		return await this.__http.get(`${this.url}/skills`).toPromise().then().catch((err: any) => {
-			console.log(err);
-		});
+		return await this.__http.get(`${this.url}/skills`).toPromise().then();
 	}	
 
 	// Get One Data From Url
 	async getOneSkillFromUrl(id: number){
-		return await this.__http.get(`${this.url}/skills/${id}`).toPromise().catch((err: any) => {
-			console.log(err);
-		});
+		return await this.__http.get(`${this.url}/skills/${id}`).toPromise();
 	}
 
 	// Get All Data From Url
 	async getAllProjectsFromUrl(){
-		return await this.__http.get(`${this.url}/projects`).toPromise().catch((err: any) => {
-			console.log(err);
-		});
+		return await this.__http.get(`${this.url}/projects`).toPromise();
 	}	
 
 	// Get One Data From Url
 	async getOneProjectFromUrl(slug: string){
-		return await this.__http.get(`${this.url}/projects/${slug}`).toPromise().catch((err: any) => {
-			console.log(err);
-		});
+		return await this.__http.get(`${this.url}/projects/${slug}`).toPromise();
 	}
 
 	// Send Message To Url
 	async sendMessageToUrl(email: any){
-		return await this.__http.post(`${this.url}/contact`, email).toPromise().catch((err: any) => {
-			console.log(err);
-		});
+		return await this.__http.post(`${this.url}/contact/`, email).toPromise();
 	}
 }

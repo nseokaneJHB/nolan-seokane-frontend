@@ -1,7 +1,0 @@
-{
-	"/api": {
-		"target": "https://nolan-seokane-api.herokuapp.com/",
-		"secure": false,
-		"logLevel": "debug"
-	}
-}

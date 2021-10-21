@@ -23,7 +23,9 @@ export class ProjectComponent implements OnInit {
 
 			// Structure Skills
 			for (const skill in res.skills) {
-				res.skills[skill] = await this.__api.getOneSkillFromUrl(res.skills[skill]);
+				res.skills[skill] = await this.__api.getOneSkillFromUrl(res.skills[skill]).catch((err: any) => {
+					console.log(err);
+				});
 			}
 
 			this.project = await res;
@@ -32,6 +34,8 @@ export class ProjectComponent implements OnInit {
 			setTimeout(async() => {
 				await this.__loader.hide();
 			}, 500);
+		}).catch((err: any) => {
+			console.log(err);
 		});
 	}
 

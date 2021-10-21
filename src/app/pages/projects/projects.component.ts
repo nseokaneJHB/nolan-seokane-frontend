@@ -22,6 +22,8 @@ export class ProjectsComponent implements OnInit {
 			setTimeout(async() => {
 				await this.__loader.hide();
 			}, 500);
+		}).catch((err: any) => {
+			console.log(err);
 		});
 	}
 

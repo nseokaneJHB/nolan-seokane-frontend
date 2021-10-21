@@ -73,8 +73,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "nolan-seokane:build",
-            "proxyConfig": "src/proxy.config.json"
+            "browserTarget": "nolan-seokane:build"
           },
           "configurations": {
             "production": {

@@ -25,28 +25,27 @@ export class ContactComponent implements OnInit {
 	ngOnInit(): void {}
 
 	sendEmail(){
-		if (this.contactForm.value.name.trim() === "") return this.form_error = { name: "Please provide a name" };
-		if (this.contactForm.value.subject.trim() === "") return this.form_error = { subject: "Please provide a the subject" };
-		if (this.contactForm.value.message.trim() === "") return this.form_error = { message: "Please provide a message" };
-		if (this.contactForm.value.email.trim() === "") return this.form_error = { email: "Please provide an email" };
-
-		const full_name = this.contactForm.value.name.split(" ");
-		const subject = this.contactForm.value.subject.split(" ");
-
-		this.contactForm.patchValue({ 
-			...this.contactForm.value,
-			subject: subject.map((sub: any) => sub[0].toUpperCase() + sub.substring(1)).join(" "),
-			name: full_name.map((name: any) => name[0].toUpperCase() + name.substring(1)).join(" ") 
-		})
-
 		this.__loader.show();
 
-		this.__api.sendMessageToUrl(this.contactForm.value).then(() => {
+		this.__api.sendMessageToUrl(this.contactForm.value).then((res: any) => {
+
+			setTimeout(async() => {
+				this.contactForm.reset();
+				await this.__loader.hide();
+			}, 500);
+
+			this.__toast.success(res.message, 'Success');
+			this.ngOnInit();
+		}).catch((err: any) => {
 			setTimeout(async() => {
 				await this.__loader.hide();
 			}, 500);
-		}).finally(() => {
-			this.__toast.success('Hello world!', 'Toastr fun!');
+
+			if (err.status === 500) return this.__toast.error('Oops! something went wrong. Please try again later', 'Error');
+			if (err.status === 503) return this.__toast.error(err.error.message, 'Error');
+			if (err.status === 400) {
+				this.form_error = err.error;
+			}
 		});
 	}
 }
