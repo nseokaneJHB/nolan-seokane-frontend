@@ -1,18 +1,23 @@
 <section class="contact__page">
-	<div class="contact__form">
+	<ngx-spinner bdColor="rgba(0, 0, 0, 0.85)" size="large" type="ball-atom" [fullScreen]="true">
+		<p>Sending mail...</p>
+	</ngx-spinner>
 
+	<div class="contact__form">
 		<form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-outline mb-4">
 						<label class="form-label">Full Name</label>
 						<input type="text" class="form-control form-control-sm" formControlName="name" />
+						<small *ngIf="form_error.name" class="form__error">{{ form_error.name }}</small>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-outline mb-4">
 						<label class="form-label">Email address</label>
 						<input type="email" class="form-control form-control-sm" formControlName="email" />
+						<small *ngIf="form_error.email" class="form__error">{{ form_error.email }}</small>
 					</div>
 				</div>
 			</div>
@@ -20,11 +25,13 @@
 			<div class="form-outline mb-4">
 				<label class="form-label">Subject</label>
 				<input type="text" class="form-control form-control-sm" formControlName="subject" />
+				<small *ngIf="form_error.subject" class="form__error">{{ form_error.subject }}</small>
 			</div>
 
 			<div class="form-outline mb-4">
 				<label class="form-label">Message</label>
 				<textarea class="form-control form-control-sm" rows="4" formControlName="message"></textarea>
+				<small *ngIf="form_error.message" class="form__error">{{ form_error.message }}</small>
 			</div>
 
 			<button type="submit" class="btn btn__outline__primary d-block mx-auto w-75 mb-2">Send</button>

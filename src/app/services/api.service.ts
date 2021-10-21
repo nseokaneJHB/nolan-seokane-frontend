@@ -41,4 +41,11 @@ export class ApiService {
 			console.log(err);
 		});
 	}
+
+	// Send Message To Url
+	async sendMessageToUrl(email: any){
+		return await this.__http.post(`${this.url}/contact`, email).toPromise().catch((err: any) => {
+			console.log(err);
+		});
+	}
 }

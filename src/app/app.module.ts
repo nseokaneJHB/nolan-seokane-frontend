@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 // ========================================== External Modules ==========================================
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -43,6 +44,15 @@ import { NgxSpinnerModule } from "ngx-spinner";
 		NgxSpinnerModule,
 		ReactiveFormsModule,
 		BrowserAnimationsModule,
+		ToastrModule.forRoot({
+			positionClass: 'toast-top-center',
+			progressAnimation: 'decreasing',
+			preventDuplicates: true,
+			tapToDismiss: true,
+			progressBar: true,
+			closeButton: true,
+			timeOut: 5000,
+		}),
 	],
 	providers: [],
 	bootstrap: [AppComponent]

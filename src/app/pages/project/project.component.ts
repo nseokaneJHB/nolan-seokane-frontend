@@ -18,6 +18,7 @@ export class ProjectComponent implements OnInit {
 	// Execute on load
 	async load(){
 		const slug: any = this.__activated.snapshot.params;
+		
 		await this.__api.getOneProjectFromUrl(slug.slug).then(async(res: any) => {
 
 			// Structure Skills
