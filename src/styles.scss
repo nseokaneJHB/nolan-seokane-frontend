@@ -90,7 +90,14 @@ body{
 		}
 	}
 
-	
+	.ng-star-inserted, .ng-star-inserted{
+		color: $primary-color !important;
+	}
+
+	.loading-text p{
+		color: $quinary-color;
+		margin-top: 5em;
+	}
 
 	.btn__outline__secondary{
 		border: 1px solid $primary-color !important;
@@ -265,7 +272,7 @@ body{
 
 						.project__links a{
 							border: 1px solid $quinary-color;
-							color: $quinary-color;
+							color: $quinary-color !important;
 
 							&:hover{
 								background-color: $quinary-color;
@@ -297,6 +304,9 @@ body{
 		}
 
 		.project__page{
+			border: 1px solid;
+			grid-template-rows: 10% 90%;
+			padding-bottom: 3em;
 			display: grid;
 
 			.btn.btn__outline__secondary{

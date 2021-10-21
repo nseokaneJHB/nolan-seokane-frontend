@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { ApiService } from 'src/app/services/api.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-projects',
@@ -10,16 +10,23 @@ import { environment } from 'src/environments/environment';
 })
 export class ProjectsComponent implements OnInit {
 
-	constructor(private __api: ApiService) { }
+	constructor(private __api: ApiService, private __loader: NgxSpinnerService) { }
 	projects: any = []
 	skill: any;
 
 	// Execute on load
 	async load(){
-		this.projects = await this.__api.getAllProjectsFromUrl();
+		await this.__api.getAllProjectsFromUrl().then(async(res: any) => {
+			this.projects = await res;
+		}).finally(() => {
+			setTimeout(async() => {
+				await this.__loader.hide();
+			}, 500);
+		});
 	}
 
 	ngOnInit(): void {
+		this.__loader.show();
 		this.load();
 	}
 

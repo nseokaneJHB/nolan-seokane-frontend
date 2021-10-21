@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { ApiService } from 'src/app/services/api.service';
 
@@ -11,21 +12,30 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProjectComponent implements OnInit {
 
 	
-	constructor(private __activated: ActivatedRoute, private __api: ApiService) { }
+	constructor(private __activated: ActivatedRoute, private __api: ApiService, private __loader: NgxSpinnerService) { }
 	project: any = {}
 
 	// Execute on load
 	async load(){
 		const slug: any = this.__activated.snapshot.params;
-		this.project = await this.__api.getOneProjectFromUrl(slug.slug);
+		await this.__api.getOneProjectFromUrl(slug.slug).then(async(res: any) => {
 
-		// Structure Skills
-		for (const skill in this.project.skills) {
-			this.project.skills[skill] = await this.__api.getOneSkillFromUrl(this.project.skills[skill]);
-		}
+			// Structure Skills
+			for (const skill in res.skills) {
+				res.skills[skill] = await this.__api.getOneSkillFromUrl(res.skills[skill]);
+			}
+
+			this.project = await res;
+
+		}).finally(() => {
+			setTimeout(async() => {
+				await this.__loader.hide();
+			}, 500);
+		});
 	}
 
 	ngOnInit(): void {
+		this.__loader.show();
 		this.load();
 	}
 

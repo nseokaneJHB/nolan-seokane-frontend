@@ -1,7 +1,4 @@
 <section class="projects__page">
-	<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size = "medium" color="$primary-color" type="ball-scale-pulse" [fullScreen]="true">
-		<p style="color: $quinary-color" > Loading... </p>
-	</ngx-spinner>
 	<h1 class="h1 text-center">Projects</h1>
 	<div class="search__project">
 		<div class="form-group w-100 d-flex gap-2" style="max-width: 400px;">
@@ -9,10 +6,9 @@
 		</div>
 	</div>
 	<div class="projects">
-
 		<ng-container *ngIf="projects.length && projects.length > 0; else elseTemplate">
 			<div class="project" *ngFor="let project of projects">
-				<img class="img-fluid" src="{{project.thumbnail}}" alt="{{ project.title | titlecase }}">
+				<img class="img-fluid" src="{{project.thumbnail}}" alt="{{ project.title | titlecase }}" loading="lazy">
 				<div class="overlay">
 					<div class="text">
 						<h5 class="h5 px-1" style="font-family: brewery;">{{ project.title.length > 30 ? ( project.title | slice: 0:30 ) + '...': project.title  }}</h5>
@@ -43,4 +39,8 @@
 			<p>No Project Found This Time</p>
 		</ng-template>
 	</div>
+
+	<ngx-spinner bdColor="rgba(0, 0, 0, 0.85)" size="large" type="ball-atom" [fullScreen]="true">
+		<p>Loading...</p>
+	</ngx-spinner>
 </section>

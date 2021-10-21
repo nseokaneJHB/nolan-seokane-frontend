@@ -16,7 +16,7 @@ export class ApiService {
 
 	// Get All Data From Url
 	async getAllSkillsFromUrl(){
-		return await this.__http.get(`${this.url}/skills`).toPromise().catch((err: any) => {
+		return await this.__http.get(`${this.url}/skills`).toPromise().then().catch((err: any) => {
 			console.log(err);
 		});
 	}	
