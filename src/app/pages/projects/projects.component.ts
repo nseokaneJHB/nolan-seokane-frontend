@@ -5,8 +5,7 @@ import { ApiService } from 'src/app/services/api.service';
 
 @Component({
 	selector: 'app-projects',
-	templateUrl: './projects.component.html',
-	styleUrls: ['./projects.component.scss']
+	templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
 

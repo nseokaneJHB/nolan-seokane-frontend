@@ -3,13 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 @font-face {
-	font-family: brewery;
 	src: url('./assets/fonts/local-brewery-four.otf');
+	font-family: brewery;
+	font-display: swap
 }
 
 @font-face {
-	font-family: flood;
 	src: url('./assets/fonts/flood-std.otf');
+	font-family: flood;
+	font-display: swap
 }
 
 @import 'default.scss';
@@ -52,7 +54,7 @@ img{
 	color: $quinary-color !important;
 
 	&::before{
-		background: url("./assets/images/logo.jpeg") no-repeat 0 0;
+		background: url("./assets/images/logo.webp") no-repeat 0 0;
 		background-size: 100% 100%;
 		display: inline-block;
 		align-items: center;
@@ -362,13 +364,17 @@ body{
 						}
 					}
 
-					.project__links{
-						justify-content: start !important;
-
-						.project__link{
-							border-radius: .3em;
-							align-items: center;
-							width: 100px;
+					.project__links .project__link{
+						border-radius: .3em !important;
+						width: 80px !important;
+						text-decoration: none;
+						align-items: center;
+						display: flex;
+						gap: .3em;
+						
+						small{
+							display: block !important;
+							margin-top: .2em;
 						}
 					}
 				}
