@@ -56,8 +56,8 @@ img{
 		background-size: 100% 100%;
 		display: inline-block;
 		align-items: center;
-		min-height: 250px;
-		min-width: 250px;
+		min-height: 190px;
+		min-width: 200px;
 		height: 100%;
 		width: 100%;
 		content: "";
@@ -126,40 +126,15 @@ body{
 	// ================================================== Navigation bar ==================================================
 	.navbar{
 		background-color: $primary-color !important;
-
-		.navbar-brand {
-			color: $quinary-color !important;
-		}
-		
-		.navbar-nav {
-			.nav-link {
-				color: $quinary-color !important;
-			}
-		
-			.show > .nav-link,
-			.active > .nav-link,
-			.nav-link.show,
-			.nav-link.active {
-				color: $quinary-color !important;
-			}
-		}
 		
 		svg {
-			color: $quinary-color !important;
 			border-color: $quinary-color !important;
+			color: $quinary-color !important;
 		}
 
 		.navbar-toggler, .navbar-toggler:focus{
 			box-shadow: none;
 			border: none;
-		}
-		
-		.navbar-text {
-			color: $quinary-color !important;
-
-			a {
-				color: $quinary-color !important;
-			}
 		}
 	}
 	// ================================================== End Of Navigation bar ==================================================
@@ -192,9 +167,24 @@ body{
 				height: 30px;
 				width: 30px;
 
+				small{
+					display: none;
+				}
+
 				&:hover{
 					background-color: $primary-color;
 					color: $quinary-color;
+					text-decoration: none;
+					border-radius: .3em;
+					align-items: center;
+					display: flex;
+					width: 80px;
+					gap: .3em;
+
+					small{
+						margin-top: .3em;
+						display: block;
+					}
 				}
 			}
 		}
@@ -235,8 +225,12 @@ body{
 					position: relative;
 					overflow: hidden;
 					max-width: 250px;
-					height: 250px;
+					height: 200px;
 					width: 100%;
+
+					img{
+						height: 170px;
+					}
 
 					.overlay {
 						background-color: $primary-color;
@@ -276,7 +270,7 @@ body{
 
 							&:hover{
 								background-color: $quinary-color;
-								color: $primary-color;
+								color: $primary-color !important;
 							}
 						}
 					}
@@ -332,9 +326,9 @@ body{
 					align-items: center;
 
 					img{
+						min-width: 300px;
 						overflow: hidden;
 						height: 300px;
-						min-width: 300px;
 
 						&::before{
 							min-height: 100%;
@@ -355,10 +349,12 @@ body{
 
 						.stack{
 							justify-content: center;
+							flex-direction: column;
 							color: $quinary-color;
 							border-radius: .3em;
 							align-items: center;
 							display: flex;
+							gap: .5em;
 
 							img{
 								max-width: 30px;

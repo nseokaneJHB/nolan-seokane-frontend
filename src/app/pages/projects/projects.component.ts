@@ -18,6 +18,7 @@ export class ProjectsComponent implements OnInit {
 	async load(){
 		await this.__api.getAllProjectsFromUrl().then(async(res: any) => {
 			this.projects = await res;
+
 		}).finally(() => {
 			setTimeout(async() => {
 				await this.__loader.hide();

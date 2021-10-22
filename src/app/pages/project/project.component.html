@@ -18,6 +18,7 @@
 			<div class="tech__stacks row">
 				<small class="stack col" *ngFor="let skill of project.skills">
 					<img *ngIf="skill.skill" src="../../../assets/svg/{{ skill.skill | lowercase }}.svg" loading="lazy">
+					<small>{{ skill.skill }}</small>
 				</small>
 			</div>
 			<div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">

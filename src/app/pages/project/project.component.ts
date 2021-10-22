@@ -26,7 +26,7 @@ export class ProjectComponent implements OnInit {
 				res.skills[skill] = await this.__api.getOneSkillFromUrl(res.skills[skill]).catch((err: any) => {
 					console.log(err);
 				});
-			}
+			}			
 
 			this.project = await res;
 
