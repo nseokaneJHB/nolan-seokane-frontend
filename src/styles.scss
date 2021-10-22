@@ -158,32 +158,32 @@ body{
 
 			.social__link, .project__link{
 				border: 1px solid $primary-color;
+				border-radius: 50% !important;
 				justify-content: center;
+				width: 30px !important;
 				color: $primary-color;
 				align-items: center;
-				border-radius: 50%;
 				cursor: pointer;
 				display: flex;
 				height: 30px;
-				width: 30px;
 
 				small{
-					display: none;
+					display: none !important;
 				}
 
 				&:hover{
 					background-color: $primary-color;
-					color: $quinary-color;
+					color: $quinary-color !important;
+					border-radius: .3em !important;
+					width: 80px !important;
 					text-decoration: none;
-					border-radius: .3em;
 					align-items: center;
 					display: flex;
-					width: 80px;
 					gap: .3em;
 
 					small{
-						margin-top: .3em;
-						display: block;
+						margin-top: .3em !important;
+						display: block !important;
 					}
 				}
 			}
