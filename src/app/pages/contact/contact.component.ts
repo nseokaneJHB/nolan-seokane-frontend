@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
 	constructor(private __api: ApiService, private __loader: NgxSpinnerService, private __toast: ToastrService) { }
 
 	contactForm = new FormGroup({
+		send_copy: new FormControl(''),
 		subject: new FormControl(''),
 		message: new FormControl(''),
 		email: new FormControl(''),
@@ -25,6 +26,8 @@ export class ContactComponent implements OnInit {
 	ngOnInit(): void {}
 
 	sendEmail(){
+		this.contactForm.value.send_copy === true ? this.contactForm.value.send_copy = 'True' : this.contactForm.value.send_copy = 'False';
+
 		this.__loader.show();
 
 		this.__api.sendMessageToUrl(this.contactForm.value).then((res: any) => {

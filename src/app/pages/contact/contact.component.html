@@ -34,6 +34,13 @@
 				<small *ngIf="form_error.message" class="form__error">{{ form_error.message }}</small>
 			</div>
 
+			<div class="form-outline mb-4 d-flex justify-content-center">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" formControlName="send_copy">
+					<label class="form-check-label">Send me a copy</label>
+				</div>
+			</div>
+
 			<button type="submit" class="btn btn__outline__primary d-block mx-auto w-75 mb-2">Send</button>
 		</form>
 
