@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -11,7 +12,19 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProjectComponent implements OnInit {
 
 	
-	constructor(private __activated: ActivatedRoute, private __api: ApiService, private __loader: NgxSpinnerService) { }
+	constructor(private __activated: ActivatedRoute, private __api: ApiService, private __loader: NgxSpinnerService, private meta: Meta, private title: Title) {
+		this.meta.addTags([
+			{name: 'description', content: 'Project page of Nolan Seokane\'s web portfolio'},
+			{name: 'author', content: 'Nolan Seokane'},
+			{name: 'keywords', content: 'Nolan, Seokane, Angular, Django, Portfolio, Project'}
+		]);
+		this.setTitle('Project');
+	}
+
+	public setTitle(newTitle: string) {
+		this.title.setTitle( `${this.title.getTitle()} - ${newTitle}` );
+	}
+
 	project: any = {}
 
 	// Execute on load
