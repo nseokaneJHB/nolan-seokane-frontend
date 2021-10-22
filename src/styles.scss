@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 // Font
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 @font-face {
 	src: url('./assets/fonts/local-brewery-four.otf');
@@ -14,7 +13,10 @@
 	font-display: swap
 }
 
-@import 'default.scss';
+$primary-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.07);
+$primary-color: #563763;
+$tertiary-color: rgba(105, 140, 137, 1);
+$quinary-color: rgb(230, 230, 230);
 
 // Screen Sizes
 $tablet: 750px;
