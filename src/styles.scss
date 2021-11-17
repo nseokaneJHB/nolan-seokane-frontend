@@ -13,10 +13,17 @@
 	font-display: swap
 }
 
-$primary-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.07);
-$primary-color: #563763;
+$primary-background: radial-gradient(at top left, rgba(146,43,225,1) 0%, rgba(43,9,107,1) 100%);
+$primary-shadow: 0 0 3px rgba(0, 0, 0, 0.5);;
+$primary-color: rgba(255, 255, 255, 0.5);
+
+$secondary-background: radial-gradient(at bottom left, rgba(146, 43, 225, 1) 0%, rgba(43, 9, 107, 1) 100%);
+
 $tertiary-color: rgba(105, 140, 137, 1);
+$tertiary-background: linear-gradient(to right, rgba(146, 43, 225, 0.027) 0%, rgba(43, 9, 107, 0.048) 100%);
+
 $quinary-color: rgb(230, 230, 230);
+$quinary-background: rgba(99, 0, 175, 0.8);
 
 // Screen Sizes
 $tablet: 750px;
@@ -41,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, small, span, a, button, label{
-	font-family: brewery;
+	font-family: monospace;
 }
 
 button:focus, 
@@ -69,7 +76,7 @@ img{
 }
 
 body{
-	background-color: $quinary-color;
+	background: $primary-background;
 	color: $primary-color;
 
 	.btn__outline__primary, .btn__outline__secondary{
@@ -79,19 +86,20 @@ body{
 	}
 
 	.btn__outline__primary{
-		border: 1px solid $quinary-color !important;
-		color: $quinary-color !important;
+		border: 1px solid $primary-color !important;
+		color: $primary-color !important;
 
 		svg{
-			color: $quinary-color !important;
+			color: $primary-color !important;
 		}
 
 		&:hover{
-			background-color: $quinary-color !important;
-			color: $primary-color !important;
+			// background-color: $quinary-color !important;
+			border: 1px solid $quinary-color !important;
+			color: $quinary-color !important;
 
 			svg{
-				color: $primary-color !important;
+				color: $quinary-color !important;
 			}
 		}
 	}
@@ -105,40 +113,23 @@ body{
 		margin-top: 5em;
 	}
 
-	.btn__outline__secondary{
-		border: 1px solid $primary-color !important;
-		color: $primary-color !important;
-
-		svg{
-			color: $primary-color !important;
-		}
-
-		&:hover{
-			background-color: $primary-color !important;
-			color: $quinary-color !important;
-
-			svg{
-				color: $quinary-color !important;
-			}
-		}
-	}
-
 	.toast-title, .toast-message{
 		color: lighten($quinary-color, 20%) !important;
 	}
 
 	// ================================================== Navigation bar ==================================================
 	.navbar{
-		background-color: $primary-color !important;
-		
-		svg {
-			border-color: $quinary-color !important;
-			color: $quinary-color !important;
-		}
+		background: $secondary-background;
+		box-shadow: $primary-shadow;
 
 		.navbar-toggler, .navbar-toggler:focus{
 			box-shadow: none;
 			border: none;
+
+			svg {
+				border-color: $primary-color !important;
+				color: $primary-color !important;
+			}
 		}
 	}
 	// ================================================== End Of Navigation bar ==================================================
@@ -161,7 +152,7 @@ body{
 			gap: 1em;
 
 			.social__link, .project__link{
-				border: 1px solid $primary-color;
+				border: 1px solid $primary-color; 
 				border-radius: 50% !important;
 				justify-content: center;
 				width: 30px !important;
@@ -176,17 +167,16 @@ body{
 				}
 
 				&:hover{
-					background-color: $primary-color;
+					border: 1px solid $quinary-color; 
 					color: $quinary-color !important;
 					border-radius: .3em !important;
-					width: 80px !important;
+					width: 110px !important;
 					text-decoration: none;
 					align-items: center;
 					display: flex;
 					gap: .3em;
 
 					small{
-						margin-top: .3em !important;
 						display: block !important;
 					}
 				}
@@ -224,8 +214,7 @@ body{
 				gap: 1.5em;
 
 				.project{
-					background-color: $primary-color;
-					box-shadow: $primary-shadow;
+					background: $tertiary-background;
 					position: relative;
 					overflow: hidden;
 					max-width: 250px;
@@ -233,11 +222,11 @@ body{
 					width: 100%;
 
 					img{
-						height: 170px;
+						height: 160px;
 					}
 
 					.overlay {
-						background-color: $primary-color;
+						background-color: $tertiary-background;
 						transition: .5s ease;
 						position: absolute;
 						overflow: hidden;
@@ -267,16 +256,6 @@ body{
 								padding: 0 .5em;
 							}
 						}
-
-						.project__links a{
-							border: 1px solid $quinary-color;
-							color: $quinary-color !important;
-
-							&:hover{
-								background-color: $quinary-color;
-								color: $primary-color !important;
-							}
-						}
 					}
 
 					&:hover {
@@ -285,7 +264,7 @@ body{
 						}
 
 						.overlay {
-							background-color: rgba($primary-color, 0.8);
+							background: $quinary-background;
 							height: 100%;
 
 							.text{
@@ -306,7 +285,7 @@ body{
 			padding-bottom: 3em;
 			display: grid;
 
-			.btn.btn__outline__secondary{
+			.btn.btn__outline__primary{
 				max-width: 100px !important;
 				justify-content: center;
 				margin-left: .5em;
@@ -368,7 +347,7 @@ body{
 
 					.project__links .project__link{
 						border-radius: .3em !important;
-						width: 80px !important;
+						width: 100px !important;
 						text-decoration: none;
 						align-items: center;
 						display: flex;
@@ -376,7 +355,6 @@ body{
 						
 						small{
 							display: block !important;
-							margin-top: .2em;
 						}
 					}
 				}
@@ -390,15 +368,20 @@ body{
 			display: flex;
 
 			.contact__form{
-				background-color: rgba($primary-color, 0.8);
-				box-shadow: $primary-shadow;
 				border-radius: .5em;
 				max-width: 600px;
 				padding: 2em;
 				width: 100%;
 
-				label{
+				input.form-control, textarea{
+					background: $tertiary-background;
 					color: $quinary-color;
+					border: none;
+					border-bottom: 1px solid $quinary-color;
+				}
+
+				label{
+					color: $primary-color;
 				}
 
 				.form__error{
@@ -414,12 +397,14 @@ body{
 		}
 	}
 
+	// ================================================== Footer ==================================================
 	.footer__section{
-		background-color: $primary-color;
+		background: $tertiary-background;
 		justify-content: center;
-		color: $quinary-color;
+		color: $primary-color;
 		align-items: center;
 		display: flex;
 		height: 40px;
 	}
+	// ================================================== End Of Footer ==================================================
 }
