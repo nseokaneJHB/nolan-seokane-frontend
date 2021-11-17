@@ -19,7 +19,7 @@ $primary-color: rgba(255, 255, 255, 0.5);
 
 $secondary-background: radial-gradient(at bottom left, rgba(146, 43, 225, 1) 0%, rgba(43, 9, 107, 1) 100%);
 
-$tertiary-color: rgba(105, 140, 137, 1);
+$tertiary-color: rgba(99, 0, 175, 1);
 $tertiary-background: linear-gradient(to right, rgba(146, 43, 225, 0.027) 0%, rgba(43, 9, 107, 0.048) 100%);
 
 $quinary-color: rgb(230, 230, 230);
@@ -44,10 +44,12 @@ $tablet: 750px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: $primary-color;
 	font-family: flood;
 }
 
 p, small, span, a, button, label{
+	color: $primary-color !important;
 	font-family: monospace;
 }
 
@@ -104,12 +106,13 @@ body{
 		}
 	}
 
-	.ng-star-inserted, .ng-star-inserted{
-		color: $primary-color !important;
+	.ng-star-inserted{
+		color: $tertiary-color !important;
 	}
 
 	.loading-text p{
-		color: $quinary-color;
+		font-family: monospace !important;
+		color: $primary-color;
 		margin-top: 5em;
 	}
 
@@ -323,7 +326,7 @@ body{
 
 				.project__details{
 					.project__date{
-						color: $tertiary-color;
+						color: $quinary-color;
 					}
 
 					.tech__stacks{
