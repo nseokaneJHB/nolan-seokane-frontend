@@ -23,8 +23,9 @@ export class ProjectsComponent implements OnInit {
 		this.title.setTitle( `${this.title.getTitle()} - ${newTitle}` );
 	}
 
-	projects: any = []
+	projects: any = [];
 	skill: any;
+	loader_text: String = ""
 
 	// Execute on load
 	async load(){
@@ -36,7 +37,8 @@ export class ProjectsComponent implements OnInit {
 				await this.__loader.hide();
 			}, 500);
 		}).catch((err: any) => {
-			console.log(err);
+			this.loader_text = "Oops!! Something went wrong. Please come back later";
+			this.__loader.show();
 		});
 	}
 

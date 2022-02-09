@@ -216,6 +216,11 @@ body{
 				height: 100%;
 				gap: 1.5em;
 
+				p{
+					color: $quinary-color !important;
+					text-align: center;
+				}
+
 				.project{
 					background: $tertiary-background;
 					position: relative;
