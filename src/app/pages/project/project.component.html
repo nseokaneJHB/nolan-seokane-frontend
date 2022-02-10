@@ -27,7 +27,8 @@
 					<small>Go Live</small>
 				</a>
 			</div>
-			<p style="white-space: pre-wrap">{{ project.description }}</p>
+			<p class="mb-0" style="white-space: pre-wrap">{{ project.description }}</p>
+			<ul id="other_links" class="mb-4" style="white-space: pre-wrap" disclaimer="NB: This/These links will direct you to my GitHub repos and some of them are private, kindly contact me for access to the code."></ul>
 			<div class="tech__stacks row">
 				<small class="stack col" *ngFor="let skill of project.skills">
 					<img class="img-fluid" *ngIf="skill.skill" src="../../../assets/svg/{{ skill.skill | lowercase }}.svg" loading="lazy">

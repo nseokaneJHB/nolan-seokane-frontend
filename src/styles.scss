@@ -331,7 +331,6 @@ body{
 							min-width: 100%;
 						}
 					}
-
 				}
 
 				.project__details{
@@ -369,6 +368,22 @@ body{
 						small{
 							display: block !important;
 						}
+					}
+				}
+
+				ul[disclaimer]::before {
+					color: rgb(255, 0, 43) !important;
+					content: attr(disclaimer);
+					margin-left: -30px;
+					font-size: x-small;
+					display: block;
+				}
+
+				.other_link{
+					color: $quinary-color !important;
+
+					&:hover{
+						color: $primary-color !important;
 					}
 				}
 			}

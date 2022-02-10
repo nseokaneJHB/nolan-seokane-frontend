@@ -26,6 +26,7 @@ export class ProjectComponent implements OnInit {
 	}
 
 	project: any = {}
+	link_elements: any[] = []
 
 	// Execute on load
 	async load(){
@@ -38,14 +39,45 @@ export class ProjectComponent implements OnInit {
 				res.skills[skill] = await this.__api.getOneSkillFromUrl(res.skills[skill]).catch((err: any) => {
 					console.log(err);
 				});
-			}			
-
+			}
+			
 			this.project = await res;
 
+			if (this.project.description.includes('https')){
+				let words = this.project.description.split('\n')
+				for (const word in words) {
+					if (words[word].includes('https://')){
+						let list_element = document.createElement("li") as HTMLLIElement
+						let anchor_element = document.createElement('a') as HTMLAnchorElement
+						let word_with_link = words[word].split(': ')
+
+						anchor_element.href = word_with_link[1]
+						anchor_element.target = '__blank'
+						anchor_element.textContent = word_with_link[0].substring(word_with_link[0].indexOf('- '))
+						anchor_element.classList.add('other_link')
+						anchor_element.style.textDecoration = "none"
+						list_element.appendChild(anchor_element)
+						this.link_elements.push(list_element)
+					}
+				}
+			}
+			
+			this.project.description = this.project.description.substring(0, (this.project.description.indexOf('\nOther GitHub Links:') + '\nOther GitHub Links:'.length));
+			
+			let other_links = document.getElementById('other_links') as HTMLUListElement
+			other_links.style.listStyleType = 'none'
+			
+			if (this.link_elements.length < 1) other_links.remove()
+
+			for (const ele in this.link_elements) {
+				console.log(this.link_elements[ele]);
+				other_links.appendChild(this.link_elements[ele])
+			}
+
 		}).finally(() => {
-			setTimeout(async() => {
-				await this.__loader.hide();
-			}, 500);
+			// setTimeout(async() => {
+				this.__loader.hide();
+			// }, 500);
 		}).catch((err: any) => {
 			console.log(err);
 		});
