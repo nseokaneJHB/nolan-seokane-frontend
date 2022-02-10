@@ -156,10 +156,10 @@ body{
 
 			.social__link, .project__link{
 				border: 1px solid $primary-color; 
+				color: $primary-color !important;
 				border-radius: 50% !important;
 				justify-content: center;
 				width: 30px !important;
-				color: $primary-color;
 				align-items: center;
 				cursor: pointer;
 				display: flex;
@@ -222,19 +222,24 @@ body{
 				}
 
 				.project{
-					background: $tertiary-background;
 					position: relative;
 					overflow: hidden;
 					max-width: 250px;
-					height: 200px;
+					height: 180px;
 					width: 100%;
 
 					img{
-						height: 160px;
+						filter: blur(.1px);
+						height: 100%;
+
+						&::before{
+							min-height: 200px;
+							min-width: 200px;
+						}
 					}
 
 					.overlay {
-						background-color: $tertiary-background;
+						background: $quinary-background;
 						transition: .5s ease;
 						position: absolute;
 						overflow: hidden;
