@@ -160,10 +160,12 @@ body{
 				border-radius: 50% !important;
 				justify-content: center;
 				width: 30px !important;
+				text-decoration: none;
 				align-items: center;
 				cursor: pointer;
 				display: flex;
 				height: 30px;
+				gap: .3em;
 
 				small{
 					display: none !important;
@@ -174,14 +176,25 @@ body{
 					color: $quinary-color !important;
 					border-radius: .3em !important;
 					width: 110px !important;
-					text-decoration: none;
 					align-items: center;
 					display: flex;
-					gap: .3em;
 
 					small{
+						color: $quinary-color !important;
 						display: block !important;
 					}
+				}
+			}
+
+			.projects_link{
+				border: 1px solid $quinary-color; 
+				color: $quinary-color !important;
+				border-radius: .3em !important;
+				width: 110px !important;
+
+				small{
+					color: $quinary-color !important;
+					display: block !important;
 				}
 			}
 		}
@@ -190,6 +203,26 @@ body{
 			justify-content: center;
 			flex-direction: column;
 			display: flex;
+
+			.skill__stacks{
+				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+				place-items: center;
+				max-width: 400px;
+				margin: 0 auto;
+				display: grid;
+				gap: .1em;
+
+				.skill__figure{
+					cursor: not-allowed;
+					text-align: center;
+					max-width: 50px;
+
+					.skill__caption{
+						color: $primary-color !important;
+						font-size: 12px;
+					}
+				}
+			}
 		}
 
 		.projects__page{
