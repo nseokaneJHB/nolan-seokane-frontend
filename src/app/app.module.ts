@@ -24,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 // ========================================== External Modules ==========================================
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from 'ngx-toastr';
+import { SocialsComponent } from './components/socials/socials.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
 		ContactComponent,
 		ProjectComponent,
 		ProjectsComponent,
+  SocialsComponent,
 	],
 	imports: [
 		FormsModule,

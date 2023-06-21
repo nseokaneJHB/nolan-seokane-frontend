@@ -4,12 +4,12 @@ WORKDIR /usr/src/app/
 
 COPY . .
 
-RUN npm i -g @angular/cli@11.2.4
+RUN yarn global add @angular/cli@16.1.0
 
-RUN npm i
-RUN ng --version
-RUN npm run build:prod
+RUN yarn
+RUN ng version
+RUN yarn build:prod
 
 EXPOSE $PORT
 
-CMD [ "npm", "run" , "start:prod" ]
+CMD [ "yarn", "start:prod" ]

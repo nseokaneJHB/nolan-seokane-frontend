@@ -13,8 +13,9 @@
 	font-display: swap
 }
 
-$primary-background: radial-gradient(at top left, rgba(146,43,225,1) 0%, rgba(43,9,107,1) 100%);
-$primary-shadow: 0 0 3px rgba(0, 0, 0, 0.5);;
+$primary-background: radial-gradient(at top left, rgba(146, 43, 225, 1) 0%, rgba(43, 9, 107, 1) 100%);
+$primary-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+;
 $primary-color: rgba(255, 255, 255, 0.5);
 
 $secondary-background: radial-gradient(at bottom left, rgba(146, 43, 225, 1) 0%, rgba(43, 9, 107, 1) 100%);
@@ -43,28 +44,38 @@ $tablet: 750px;
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	color: $primary-color;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $primary-color !important;
 	font-family: flood;
 }
 
-p, small, span, a, button, label{
+p,
+small,
+span,
+a,
+button,
+label {
 	color: $primary-color !important;
 	font-family: monospace;
 }
 
-button:focus, 
-input:focus, 
+button:focus,
+input:focus,
 textarea:focus,
 .btn__outline__primary:focus,
-.btn__outline__secondary:focus{
+.btn__outline__secondary:focus {
 	box-shadow: none !important;
 }
 
-img{
+img {
 	color: $quinary-color !important;
 
-	&::before{
+	&::before {
 		background: url("./assets/images/logo.webp") no-repeat 0 0;
 		background-size: 100% 100%;
 		display: inline-block;
@@ -77,55 +88,62 @@ img{
 	}
 }
 
-body{
+.hide {
+	display: none;
+}
+
+body {
 	background: $primary-background;
 	color: $primary-color;
 
-	.btn__outline__primary, .btn__outline__secondary{
+	.btn__outline__primary,
+	.btn__outline__secondary {
 		align-items: center;
 		display: flex;
 		gap: .3em;
 	}
 
-	.btn__outline__primary{
+	.btn__outline__primary {
 		border: 1px solid $primary-color !important;
 		color: $primary-color !important;
 
-		svg{
+		svg {
 			color: $primary-color !important;
 		}
 
-		&:hover{
+		&:hover {
 			// background-color: $quinary-color !important;
 			border: 1px solid $quinary-color !important;
 			color: $quinary-color !important;
 
-			svg{
+			svg {
 				color: $quinary-color !important;
 			}
 		}
 	}
 
-	.ng-star-inserted{
+	.ng-star-inserted {
 		color: $tertiary-color !important;
 	}
 
-	.loading-text p{
+	.loading-text p {
 		font-family: monospace !important;
 		color: $primary-color;
 		margin-top: 5em;
 	}
 
-	.toast-title, .toast-message{
+	.toast-title,
+	.toast-message {
 		color: lighten($quinary-color, 20%) !important;
 	}
 
 	// ================================================== Navigation bar ==================================================
-	.navbar{
+	.navbar {
 		background: $secondary-background;
 		box-shadow: $primary-shadow;
 
-		.navbar-toggler, .navbar-toggler:focus{
+		.navbar-toggler,
+		.navbar-toggler:focus {
 			box-shadow: none;
 			border: none;
 
@@ -135,27 +153,30 @@ body{
 			}
 		}
 	}
+
 	// ================================================== End Of Navigation bar ==================================================
 
-	.main__section{
+	.main__section {
 		min-height: calc(100vh - 123px);
 
 		.landing__page,
 		.project__page,
 		.projects__page,
-		.contact__page{
+		.contact__page {
 			min-height: calc(100vh - 123px);
 			padding: .5em 0;
 			width: 100%;
 		}
 
-		.social__buttons__group, .project__links{
+		.social__buttons__group,
+		.project__links {
 			justify-content: center;
 			display: flex;
 			gap: 1em;
 
-			.social__link, .project__link{
-				border: 1px solid $primary-color; 
+			.social__link,
+			.project__link {
+				border: 1px solid $primary-color;
 				color: $primary-color !important;
 				border-radius: 50% !important;
 				justify-content: center;
@@ -167,44 +188,44 @@ body{
 				height: 30px;
 				gap: .3em;
 
-				small{
+				small {
 					display: none !important;
 				}
 
-				&:hover{
-					border: 1px solid $quinary-color; 
+				&:hover {
+					border: 1px solid $quinary-color;
 					color: $quinary-color !important;
 					border-radius: .3em !important;
 					width: 110px !important;
 					align-items: center;
 					display: flex;
 
-					small{
+					small {
 						color: $quinary-color !important;
 						display: block !important;
 					}
 				}
 			}
 
-			.projects_link{
-				border: 1px solid $quinary-color; 
+			.projects_link {
+				border: 1px solid $quinary-color;
 				color: $quinary-color !important;
 				border-radius: .3em !important;
 				width: 110px !important;
 
-				small{
+				small {
 					color: $quinary-color !important;
 					display: block !important;
 				}
 			}
 		}
 
-		.landing__page{
+		.landing__page {
 			justify-content: center;
 			flex-direction: column;
 			display: flex;
 
-			.skill__stacks{
+			.skill__stacks {
 				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 				place-items: center;
 				max-width: 400px;
@@ -212,12 +233,12 @@ body{
 				display: grid;
 				gap: .1em;
 
-				.skill__figure{
+				.skill__figure {
 					cursor: not-allowed;
 					text-align: center;
 					max-width: 50px;
 
-					.skill__caption{
+					.skill__caption {
 						color: $primary-color !important;
 						font-size: 12px;
 					}
@@ -225,47 +246,64 @@ body{
 			}
 		}
 
-		.projects__page{
+		.projects__page {
 			flex-direction: column;
 			padding: 1em 0 1.5em;
 			display: flex;
 			gap: 1em;
 
-			.search__project{
+			.search__project {
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 1em;
 				display: flex;
 
-				input:focus, button:focus{
+				input.form-control {
+					background: $tertiary-background;
+					color: $quinary-color;
+					border: none;
+					border-bottom: 1px solid $quinary-color;
+				}
+
+				input::placeholder {
+					color: $quinary-color;
+				}
+
+				input:focus,
+				button:focus {
 					box-shadow: none;
 				}
+
+				input:disabled {
+					opacity: 0.5;
+					cursor: not-allowed;
+				}
 			}
-			
-			.projects{
+
+			.projects {
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 				place-items: center;
 				display: grid;
 				height: 100%;
 				gap: 1.5em;
 
-				p{
+				p {
 					color: $quinary-color !important;
 					text-align: center;
 				}
 
-				.project{
+				.project {
 					position: relative;
 					overflow: hidden;
 					max-width: 250px;
 					height: 180px;
 					width: 100%;
 
-					img{
+					img {
 						filter: blur(.1px);
 						height: 100%;
 
-						&::before{
+						&::before {
 							min-height: 200px;
 							min-width: 200px;
 						}
@@ -293,7 +331,7 @@ body{
 							left: 50%;
 							top: 50%;
 
-							.short__description{
+							.short__description {
 								font-weight: lighter;
 								margin-bottom: .8em;
 								font-size: small;
@@ -305,7 +343,7 @@ body{
 					}
 
 					&:hover {
-						img{
+						img {
 							filter: blur(3px);
 						}
 
@@ -313,10 +351,10 @@ body{
 							background: $quinary-background;
 							height: 100%;
 
-							.text{
+							.text {
 								transform: translate(-50%, -50%);
 
-								.h5{
+								.h5 {
 									padding-top: 0;
 								}
 							}
@@ -326,56 +364,57 @@ body{
 			}
 		}
 
-		.project__page{
+		.project__page {
 			grid-template-rows: 10% 90%;
 			padding-bottom: 3em;
 			display: grid;
 
-			.btn.btn__outline__primary{
+			.btn.btn__outline__primary {
 				max-width: 100px !important;
+				max-height: 40px !important;
 				justify-content: center;
 				margin-left: .5em;
 			}
 
-			.project__content{
+			.project__content {
 				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 				display: grid;
 				width: 100%;
 				gap: 1em;
 
 				.project__img,
-				.project__details{
+				.project__details {
 					justify-content: center;
 					flex-direction: column;
 					display: flex;
 					padding: 1em;
 				}
 
-				.project__img{
+				.project__img {
 					align-items: center;
 
-					img{
+					img {
 						min-width: 300px;
 						overflow: hidden;
 						height: 300px;
 
-						&::before{
+						&::before {
 							min-height: 100%;
 							min-width: 100%;
 						}
 					}
 				}
 
-				.project__details{
-					.project__date{
+				.project__details {
+					.project__date {
 						color: $quinary-color;
 					}
 
-					.tech__stacks{
+					.tech__stacks {
 						padding: 0 1em;
 						gap: .5em;
 
-						.stack{
+						.stack {
 							justify-content: center;
 							flex-direction: column;
 							color: $quinary-color;
@@ -384,21 +423,21 @@ body{
 							display: flex;
 							gap: .5em;
 
-							img{
+							img {
 								max-width: 30px;
 							}
 						}
 					}
 
-					.project__links .project__link{
+					.project__links .project__link {
 						border-radius: .3em !important;
 						width: 100px !important;
 						text-decoration: none;
 						align-items: center;
 						display: flex;
 						gap: .3em;
-						
-						small{
+
+						small {
 							display: block !important;
 						}
 					}
@@ -412,40 +451,41 @@ body{
 					display: block;
 				}
 
-				.other_link{
+				.other_link {
 					color: $quinary-color !important;
 
-					&:hover{
+					&:hover {
 						color: $primary-color !important;
 					}
 				}
 			}
 		}
 
-		.contact__page{
+		.contact__page {
 			justify-content: center;
 			align-items: center;
 			padding: 2em 0;
 			display: flex;
 
-			.contact__form{
+			.contact__form {
 				border-radius: .5em;
 				max-width: 600px;
 				padding: 2em;
 				width: 100%;
 
-				input.form-control, textarea{
+				input.form-control,
+				textarea {
 					background: $tertiary-background;
 					color: $quinary-color;
 					border: none;
 					border-bottom: 1px solid $quinary-color;
 				}
 
-				label{
+				label {
 					color: $primary-color;
 				}
 
-				.form__error{
+				.form__error {
 					border: 1px solid darken($color: pink, $amount: 20%);
 					color: darken($color: pink, $amount: 20%) !important;
 					background-color: pink;
@@ -459,7 +499,7 @@ body{
 	}
 
 	// ================================================== Footer ==================================================
-	.footer__section{
+	.footer__section {
 		background: $tertiary-background;
 		justify-content: center;
 		color: $primary-color;
@@ -467,5 +507,6 @@ body{
 		display: flex;
 		height: 40px;
 	}
+
 	// ================================================== End Of Footer ==================================================
 }
